@@ -52,6 +52,8 @@ yarn electron:build
 
 6.Codes are suck.
 
+加个交流群吧~啥都聊 363131105 rust/ark/7dtd什么的 
+
 ## Refactor plan 重构计划 2.0.0
 
 ES6 standard codes and modularization core 代码完全规范 ES6 且模组化核心代码
