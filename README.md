@@ -22,6 +22,8 @@ Vue3/Electron
 
 接着回到主面板选择配置文件开启服务器即可（如果没下载会有提示可以自动下载，每次开启都会调用一次 SteamCMD 检查更新）
 
+图文使用方式：https://blog.csdn.net/u010563056/article/details/118422695?spm=1001.2014.3001.5501
+
 ## Project setup 项目代码
 
 Setup 运行项目
@@ -52,7 +54,7 @@ yarn electron:build
 
 6.Codes are suck.
 
-加个交流群吧~啥都聊 363131105 rust/ark/7dtd什么的 
+加个交流群吧~啥都聊 363131105 rust/ark/7dtd 什么的
 
 ## Refactor plan 重构计划 2.0.0
 
