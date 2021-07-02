@@ -1,0 +1,38 @@
+@import "./common.scss";
+
+.el-overlay {
+    margin: $shadow-weight;
+    width: calc(100% - #{$shadow-weight} * 2);
+    height: calc(100% - #{$shadow-weight} * 2) !important;
+    border-radius: $common-border-radius;
+    overflow: hidden;
+}
+
+.el-drawer {
+    border-radius: $common-border-radius !important;
+}
+
+.el-card {
+    border-radius: $common-border-radius !important;
+}
+
+.el-drawer__header {
+    margin-bottom: 0px !important;
+}
+
+.item {
+    padding: calc(#{$layout-margin} * 2);
+    padding-top: calc(#{$layout-margin} / 2);
+    padding-bottom: calc(#{$layout-margin} / 2);
+    user-select: none;
+    margin-top: 3px;
+    font-size: $common-font-size;
+}
+
+.item-2 {
+    padding-top: calc(#{$layout-margin} / 2);
+    padding-bottom: calc(#{$layout-margin} / 2);
+    user-select: none;
+    margin-top: 3px;
+    font-size: $common-font-size;
+}

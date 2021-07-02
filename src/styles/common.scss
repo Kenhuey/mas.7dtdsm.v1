@@ -1,0 +1,107 @@
+$theme-color-primary: #409eff;
+$theme-color-primary-sub: #d9ecff;
+$theme-color-primary-pad: #ecf5ff;
+$theme-color-primary-deep: #0f6bc9;
+
+$theme-color-danger: #020202;
+$theme-color-danger-sub: #fde2e2;
+$theme-color-danger-pad: #fef0f0;
+$theme-color-danger-deep: #d41325;
+
+$theme-bg-color-main: #ffffff;
+$theme-bg-color-container: #f4f5f9;
+$theme-bg-color-container-inner: #edf0f7;
+
+$theme-border-color-main: #eef2f5;
+$theme-border-color-sub: #f0f3f6;
+$theme-border-color-inner: #e8ebf3;
+
+$theme-logo-color: #b2b7d1;
+$theme-logo-color-hover: #4a71cc;
+
+$theme-font-color: #1e1e1e;
+
+$window-width: 1080px;
+$window-height: 768px;
+
+$shadow-weight: 8px;
+$window-shadow: 0px 0px $shadow-weight rgba(0, 0, 0, 0.4);
+
+$effect-width: calc(#{$window-width} - #{$shadow-weight} * 2);
+$effect-height: calc(#{$window-height} - #{$shadow-weight} * 2);
+
+$control-height: 53px;
+$side-width: 53px;
+
+$common-border-radius: 12px;
+
+$common-border-weight-main: 1px;
+$common-border-weight-sub: 1px;
+
+$common-border-main: $common-border-weight-main solid $theme-border-color-sub;
+$common-border-sub: $common-border-weight-sub solid $theme-border-color-main;
+$common-border-inner: $common-border-weight-sub solid $theme-border-color-inner;
+
+$common-font-size: 12px;
+$common-line-height: calc(#{$common-font-size} * 2);
+$common-font-size-sub: 14px;
+$common-title-font-size: 18px;
+
+$layout-margin: 12px;
+
+$inner-margin: 12px;
+
+$control-content-height: calc(#{$control-height} - #{$inner-margin} * 2);
+
+.text-over-length-hidden {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+$common-transition: all 0.1s linear;
+
+$router-tab-size: 18px;
+$router-tab-margin-vertical: 14px;
+
+$common-font-color: #2e2e2e;
+
+.text-title {
+    width: 100%;
+    font-size: $common-title-font-size;
+    line-height: calc(#{$common-title-font-size} * 2);
+    font-weight: bold;
+    color: #1e1e1e;
+    user-select: none;
+}
+
+.common-margin-left {
+    margin-left: $router-tab-margin-vertical;
+}
+
+.common-margin-right {
+    margin-right: $router-tab-margin-vertical;
+}
+
+$common-button-icon-size: 13px;
+
+.common-button-size {
+    font-size: $common-button-icon-size;
+}
+
+.setting-container {
+    padding: 20px;
+    width: 100%;
+}
+
+.click-link {
+    user-select: none;
+    text-decoration: underline;
+    cursor: pointer;
+    color: $theme-color-primary-deep;
+    &:hover {
+        color: $theme-color-primary;
+    }
+    &:active {
+        color: $theme-color-primary-deep;
+    }
+}

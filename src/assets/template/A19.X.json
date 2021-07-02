@@ -1,0 +1,635 @@
+{
+    "Common": {
+        "Version": "A19.X",
+        "NotAllowEqual": [
+            [
+                ["AdminInterfaces", "ControlPanelPort"],
+                ["AdminInterfaces", "TelnetPort"],
+                ["Networking", "ServerPort"]
+            ]
+        ]
+    },
+    "ServerRepresentation": {
+        "ServerName": {
+            "Value": "My Game Host - Setup By mas.7dtdsm",
+            "Type": "String",
+            "Rules": [{
+                "type": "string",
+                "required": true,
+                "message": "verification.null"
+            }, {
+                "min": 4,
+                "max": 128,
+                "message": "verification.f4t128"
+            }],
+            "Trim": true
+        },
+        "ServerDescription": {
+            "Value": "",
+            "Type": "String",
+            "Trim": true
+        },
+        "ServerWebsiteURL": {
+            "Value": "",
+            "Type": "String",
+            "Rules": [{
+                "type": "url",
+                "message": "verification.url"
+            }],
+            "Trim": true
+        },
+        "ServerPassword": {
+            "Value": "CHANGEME",
+            "Type": "String",
+            "Password": true,
+            "Trim": true
+        },
+        "ServerLoginConfirmationText": {
+            "Value": "",
+            "Type": "String",
+            "Trim": true
+        }
+    },
+    "Networking": {
+        "ServerPort": {
+            "Value": 26900,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [1, 65534]
+        },
+        "ServerVisibility": {
+            "Value": 2,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [0, 2]
+        },
+        "ServerDisabledNetworkProtocols": {
+            "Value": "SteamNetworking",
+            "Type": "String",
+            "Rules": [{
+                "required": true
+            }],
+            "Choose": ["SteamNetworking", "LiteNetLib"],
+            "Trim": true
+        },
+        "ServerMaxWorldTransferSpeedKiBs": {
+            "Value": 512,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [128, -1]
+        }
+    },
+    "Slots": {
+        "ServerMaxPlayerCount": {
+            "Value": 8,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [1, -1]
+        },
+        "ServerReservedSlots": {
+            "Value": 0,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }]
+        },
+        "ServerReservedSlotsPermission": {
+            "Value": 100,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }]
+        },
+        "ServerAdminSlots": {
+            "Value": 0,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }]
+        },
+        "ServerAdminSlotsPermission": {
+            "Value": 0,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }]
+        }
+    },
+    "AdminInterfaces": {
+        "ControlPanelEnabled": {
+            "Value": false,
+            "Type": "Boolean",
+            "Rules": [{
+                "required": true
+            }]
+        },
+        "ControlPanelPort": {
+            "Value": 8080,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [1, 65534],
+            "EnableFrom": "ControlPanelEnabled"
+        },
+        "ControlPanelPassword": {
+            "Value": "CHANGEME",
+            "Type": "String",
+            "Rules": [{
+                "required": true
+            }],
+            "Blank": false,
+            "EnableFrom": "ControlPanelEnabled",
+            "Password": true,
+            "Trim": true
+        },
+        "TelnetEnabled": {
+            "Value": false,
+            "Type": "Boolean",
+            "Rules": [{
+                "required": true
+            }]
+        },
+        "TelnetPort": {
+            "Value": 8081,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [1, 65534],
+            "EnableFrom": "TelnetEnabled"
+        },
+        "TelnetPassword": {
+            "Value": "CHANGEME",
+            "Type": "String",
+            "Rules": [{
+                "required": true
+            }],
+            "EnableFrom": "TelnetEnabled",
+            "Password": true,
+            "Trim": true
+        },
+        "TelnetFailedLoginLimit": {
+            "Value": 8,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [0, -1],
+            "EnableFrom": "TelnetEnabled"
+        },
+        "TelnetFailedLoginsBlocktime": {
+            "Value": 60,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [0, -1],
+            "EnableFrom": "TelnetEnabled"
+        },
+        "TerminalWindowEnabled": {
+            "Value": false,
+            "Type": "Boolean",
+            "Rules": [{
+                "required": true
+            }]
+        },
+        "AdminFileName": {
+            "Value": "serveradmin.xml",
+            "Type": "String",
+            "Rules": [{
+                "required": true
+            }],
+            "Blank": false,
+            "Lock": true,
+            "Trim": true
+        }
+    },
+    "OtherTechnicalSettings": {
+        "EACEnabled": {
+            "Value": true,
+            "Type": "Boolean",
+            "Rules": [{
+                "required": true
+            }]
+        },
+        "HideCommandExecutionLog": {
+            "Value": 0,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [0, 3]
+        },
+        "MaxUncoveredMapChunksPerPlayer": {
+            "Value": 131072,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Lock": true
+        }
+    },
+    "World": {
+        "GameWorld": {
+            "Value": "Navezgane",
+            "Type": "String",
+            "Rules": [{
+                "required": true
+            }],
+            "Blank": false,
+            "Trim": true
+        },
+        "WorldGenSeed": {
+            "Value": "asdasdasdasd",
+            "Type": "String",
+            "Rules": [{
+                "required": true
+            }],
+            "Blank": false,
+            "Trim": true
+        },
+        "WorldGenSize": {
+            "Value": 4096,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [1024, -1]
+        },
+        "GameName": {
+            "Value": "MyGame",
+            "Type": "String",
+            "Rules": [{
+                "required": true
+            }],
+            "Blank": false,
+            "Trim": true
+        },
+        "GameMode": {
+            "Value": "GameModeSurvival",
+            "Type": "String",
+            "Rules": [{
+                "required": true
+            }],
+            "Choose": ["GameModeSurvival"],
+            "Lock": true,
+            "Trim": true
+        }
+    },
+    "Difficulty": {
+        "GameDifficulty": {
+            "Value": 2,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [0, 5]
+        },
+        "BlockDamagePlayer": {
+            "Value": 100,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [0, -1]
+        },
+        "BlockDamageAI": {
+            "Value": 100,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [0, -1]
+        },
+        "BlockDamageAIBM": {
+            "Value": 100,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [0, -1]
+        },
+        "XPMultiplier": {
+            "Value": 100,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [0, -1]
+        },
+        "PlayerSafeZoneLevel": {
+            "Value": 5,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [0, -1]
+        },
+        "PlayerSafeZoneHours": {
+            "Value": 5,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [0, -1]
+        }
+    },
+    "Miscellaneous": {
+        "BuildCreate": {
+            "Value": false,
+            "Type": "Boolean",
+            "Rules": [{
+                "required": true
+            }]
+        },
+        "DayNightLength": {
+            "Value": 60,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [1, -1]
+        },
+        "DayLightLength": {
+            "Value": 60,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [1, -1]
+        },
+        "DropOnDeath": {
+            "Value": 0,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [0, 4]
+        },
+        "DropOnQuit": {
+            "Value": 0,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [0, 3]
+        },
+        "BedrollDeadZoneSize": {
+            "Value": 15,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [0, -1]
+        },
+        "BedrollExpiryTime": {
+            "Value": 45,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [0, -1]
+        }
+    },
+    "PerformanceRelated": {
+        "MaxSpawnedZombies": {
+            "Value": 64,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [0, -1]
+        },
+        "MaxSpawnedAnimals": {
+            "Value": 50,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [0, -1]
+        },
+        "ServerMaxAllowedViewDistance": {
+            "Value": 12,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [0, 64]
+        }
+    },
+    "ZombieSettings": {
+        "EnemySpawnMode": {
+            "Value": true,
+            "Type": "Boolean",
+            "Rules": [{
+                "required": true
+            }]
+        },
+        "EnemyDifficulty": {
+            "Value": 0,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [0, 1]
+        },
+        "ZombieMove": {
+            "Value": 0,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [0, 4]
+        },
+        "ZombieMoveNight": {
+            "Value": 3,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [0, 4]
+        },
+        "ZombieFeralMove": {
+            "Value": 3,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [0, 4]
+        },
+        "ZombieBMMove": {
+            "Value": 3,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [0, 4]
+        },
+        "BloodMoonFrequency": {
+            "Value": 7,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [1, -1]
+        },
+        "BloodMoonRange": {
+            "Value": 0,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [0, -1]
+        },
+        "BloodMoonEnemyCount": {
+            "Value": 0,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [0, -1]
+        }
+    },
+    "Loot": {
+        "LootAbundance": {
+            "Value": 100,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [1, -1]
+        },
+        "LootRespawnDays": {
+            "Value": 100,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [0, -1]
+        },
+        "AirDropFrequency": {
+            "Value": 72,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [0, -1]
+        },
+        "AirDropMarker": {
+            "Value": true,
+            "Type": "Boolean",
+            "Rules": [{
+                "required": true
+            }]
+        }
+    },
+    "Multiplayer": {
+        "PartySharedKillRange": {
+            "Value": 100,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [0, -1]
+        },
+        "PlayerKillingMode": {
+            "Value": 0,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [0, 3]
+        }
+    },
+    "LandClaimOptions": {
+        "LandClaimCount": {
+            "Value": 1,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [1, -1]
+        },
+        "LandClaimSize": {
+            "Value": 41,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [0, -1]
+        },
+        "LandClaimDeadZone": {
+            "Value": 30,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [0, -1]
+        },
+        "LandClaimExpiryTime": {
+            "Value": 7,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [1, -1]
+        },
+        "LandClaimDecayMode": {
+            "Value": 0,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [0, -1]
+        },
+        "LandClaimOnlineDurabilityModifier": {
+            "Value": 4,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [0, -1]
+        },
+        "LandClaimOfflineDurabilityModifier": {
+            "Value": 4,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [0, -1]
+        },
+        "LandClaimOfflineDelay": {
+            "Value": 4,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [0, -1]
+        },
+        "TwitchServerPermission": {
+            "Value": 90,
+            "Type": "Number",
+            "Rules": [{
+                "required": true
+            }],
+            "Range": [0, -1],
+            "Lock": true
+        },
+        "TwitchBloodMoonAllowed": {
+            "Value": false,
+            "Type": "Boolean",
+            "Rules": [{
+                "required": true
+            }]
+        }
+    }
+}
