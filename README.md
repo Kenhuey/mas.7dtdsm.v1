@@ -1,5 +1,9 @@
 # mas.7dtdsm 1.0.0 (7 Days To Die 开服小工具)
 
+## 需知
+
+该项目已废弃并转移到v2版本(开发中): https://github.com/Kenhuey/mas.7dtdsm.v2
+
 ## Stacks 开发基于
 
 NodeJS/Typescript
@@ -39,22 +43,6 @@ Build 打包成 EXE
 ```
 yarn electron:build
 ```
-
-## Description 备注
-
-1.This is a demo projcet. 这是一个 Demo 项目。
-
-2.Codes are suck. 刚学 Vue3 没啥经验，代码很乱。
-
-3.But still work. 虽然很简陋，不过依然能用。
-
-4.This demo wouldn't update. 大概率不会更新，凑合用吧。
-
-5.Maybe refactor soon. 等有空会完全重构代码，重新写一个功能齐全的工具箱。
-
-6.Codes are suck.
-
-加个交流群吧~啥都聊 363131105 rust/ark/7dtd 什么的
 
 ## Refactor plan 重构计划 2.0.0
 
